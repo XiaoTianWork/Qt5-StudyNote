@@ -1,6 +1,6 @@
 #-------------------------------------------------
 #
-# Project created by QtCreator 2018-09-04T17:20:30
+# Project created by QtCreator 2018-09-05T14:30:48
 #
 #-------------------------------------------------
 
@@ -27,5 +27,3 @@ SOURCES += main.cpp\
         dialog.cpp
 
 HEADERS  += dialog.h
-
-FORMS    += dialog.ui
