@@ -1,0 +1,12 @@
+INPUT(
+./release\main.o
+./release\widget.o
+./release\client.o
+./release\drawer.o
+./release\server.o
+./release\qrc_images.o
+./release\moc_widget.o
+./release\moc_client.o
+./release\moc_drawer.o
+./release\moc_server.o
+);

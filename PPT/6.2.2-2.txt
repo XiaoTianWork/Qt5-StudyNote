@@ -1,0 +1,20 @@
+void PaintArea::setShape(Shape s)
+{
+    shape = s;
+    update();
+}
+void PaintArea::setPen(QPen p)
+{
+    pen = p;
+    update();
+}
+void PaintArea::setBrush(QBrush b)
+{
+    brush = b;
+    update();
+}
+void PaintArea::setFillRule(Qt::FillRule rule)
+{
+    fillRule =rule;
+    update();      							//重画绘制区窗体
+}

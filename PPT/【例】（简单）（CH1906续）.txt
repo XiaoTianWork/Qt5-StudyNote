@@ -1,0 +1,18 @@
+import QtQuick 2.7
+Rectangle {
+    property alias mouseArea: mouseArea
+    width: 200;height: 200				//(a)
+    MouseArea {
+        id: mouseArea
+        anchors.fill: parent
+    }
+    Flow {								//(b)
+        anchors.fill: parent
+        anchors.margins: 15				//元素与窗口左上角边距为15像素
+        spacing: 5
+	   //以下添加被Flow定位的元素成员
+        RedRectangle { }
+        BlueRectangle { }
+        GreenRectangle { }
+    }
+}

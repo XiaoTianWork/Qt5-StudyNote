@@ -1,0 +1,20 @@
+#include "editdialog.h"
+#include <QMessageBox>
+int uniqueCarId;
+int uniqueFactoryId;
+Dialog::Dialog(QSqlRelationalTableModel *cars, QSqlTableModel *factory, QDomDocument details,QFile *output, QWidget *parent) : QDialog(parent)
+																//(a)
+{
+    	carModel = cars;											//(b)
+	factoryModel = factory;
+    	carDetails = details;
+   	outputFile = output;
+    	QGroupBox *inputWidgetBox = createInputWidgets();
+    	QDialogButtonBox *buttonBox = createButtons();
+	//界面布局
+	QVBoxLayout *layout = new QVBoxLayout;
+	layout->addWidget(inputWidgetBox);
+	layout->addWidget(buttonBox);
+	setLayout(layout);
+	setWindowTitle(tr("添加产品"));
+}

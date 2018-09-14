@@ -1,0 +1,15 @@
+void DrawWidget::mouseMoveEvent(QMouseEvent *e)
+{
+    QPainter *painter = new QPainter;		//新建一个QPainter对象
+    QPen pen;								//新建一个QPen对象
+    pen.setStyle((Qt::PenStyle)style);		//(a)
+    pen.setWidth(weight);					//设置画笔的线宽值
+    pen.setColor(color);					//设置画笔的颜色
+    painter->begin(pix);					//(b)
+    painter->setPen(pen);					//将QPen对象应用到绘制对象中
+    //绘制从startPos到鼠标当前位置的直线
+    painter->drawLine(startPos,e->pos());
+    painter->end();
+    startPos =e->pos();				//更新鼠标的当前位置，为下次绘制做准备
+    update();						//重绘绘制区窗体
+}

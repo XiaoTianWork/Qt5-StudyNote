@@ -1,0 +1,23 @@
+#include "keyevent.h"
+#include <QPainter>
+KeyEvent::KeyEvent(QWidget *parent)
+    : QWidget(parent)
+{
+    setWindowTitle(tr("¼üÅÌÊÂ¼þ"));
+    setAutoFillBackground(true);
+    QPalette palette = this->palette();
+    palette.setColor(QPalette::Window,Qt::white);
+    setPalette(palette);
+    setMinimumSize(512,256);
+    setMaximumSize(512,256);
+    width=size().width();
+    height=size().height();
+    pix = new QPixmap(width,height);
+    pix->fill(Qt::white);
+    image.load("../image/image.png");
+    startX=100;
+    startY=100;
+    step=20;
+    drawPix();
+    resize(512,256);
+}

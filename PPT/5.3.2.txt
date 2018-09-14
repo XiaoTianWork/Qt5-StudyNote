@@ -1,0 +1,18 @@
+void ImgProcessor::ShowRotate180()
+{
+    if(img.isNull())
+        return;
+    QMatrix matrix;
+    matrix.rotate(180);
+    img = img.transformed(matrix);
+    showWidget->imageLabel->setPixmap(QPixmap::fromImage(img));
+}
+void ImgProcessor::ShowRotate270()
+{
+    if(img.isNull())
+        return;
+    QMatrix matrix;
+    matrix.rotate(270);
+    img = img.transformed(matrix);
+    showWidget->imageLabel->setPixmap(QPixmap::fromImage(img));
+}
